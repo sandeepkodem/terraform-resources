@@ -22,7 +22,7 @@ provider "azurerm" {
 
     # rather than defining this inline, the SAS Token can also be sourced
     # from an Environment Variable - more information is available below.
-    sas_token = "sp=racw&st=2024-02-09T08:16:32Z&se=2024-02-09T16:16:32Z&sv=2022-11-02&sr=c&sig=pa47h9FMUQVLRYopmlnDk0unWvAXxjWBeXQmHW6XWOs%3D"
+    access_key = "BiB1vSnZG+Oet0Iwo8RVvDJJ6KbVjq1spiHS9/NUAgAmRKPlCHfJR4iuuLZN6/1GFceXGxJObNaL+AStqDnxOw=="
   }
 }
 
