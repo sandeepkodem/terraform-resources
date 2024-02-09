@@ -25,7 +25,9 @@ provider "azurerm" {
     access_key = "BiB1vSnZG+Oet0Iwo8RVvDJJ6KbVjq1spiHS9/NUAgAmRKPlCHfJR4iuuLZN6/1GFceXGxJObNaL+AStqDnxOw=="
   }
 }
-
+resource "azurerm_resource_group" "rg1"{
+  name= "newreosurce45687"
+  location= "Central India"
 
 
 module "azure_app_insights" {
