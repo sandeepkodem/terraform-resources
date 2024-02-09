@@ -14,6 +14,16 @@ provider "azurerm" {
    client_secret = var.client_secret
    client_id = var.client_id
 }
+  backend "azurerm" {
+    storage_account_name = "terraformstatebacku"
+    container_name       = "terrastatecontianer"
+    key                  = "sample.terraform.tfstate"
+
+    # rather than defining this inline, the Access Key can also be sourced
+    # from an Environment Variable - more information is available below.
+    access_key = "sp=r&st=2024-02-09T08:00:32Z&se=2024-02-09T16:00:32Z&sv=2022-11-02&sr=c&sig=YVKvM7952eF7sUQ02wYyUVMQo%2FVEgBwMAqwwpUzgIzY%3D"
+  }
+
 
 
 module "azure_app_insights" {
