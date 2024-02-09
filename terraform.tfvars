@@ -19,3 +19,4 @@ mssql_server_administrator_login= "sandeepadmin"
 administrator_login_password= "Sandeep@1234"
 
 sql_database_name= "sandysqldb1232"
+azurerm_databricks_workspace_name = "databricksname12354
