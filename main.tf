@@ -29,7 +29,7 @@ resource "azurerm_resource_group" "rg1"{
   name= "newreosurce45687"
   location= "Central India"
 
-
+}
 module "azure_app_insights" {
   source= "./modules/app-insights"
   resource_group_name= var.resource_group_name
