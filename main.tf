@@ -16,13 +16,13 @@ provider "azurerm" {
 }
   terraform {
   backend "azurerm" {
-    storage_account_name = "terraformstatebacku"
+    storage_account_name = "storage456781"
     container_name       = "terrastatecontianer"
     key                  = "prod.terraform.tfstate"
 
     # rather than defining this inline, the SAS Token can also be sourced
     # from an Environment Variable - more information is available below.
-    access_key = "BiB1vSnZG+Oet0Iwo8RVvDJJ6KbVjq1spiHS9/NUAgAmRKPlCHfJR4iuuLZN6/1GFceXGxJObNaL+AStqDnxOw=="
+    access_key = "9GB00W88YiByjwOdOMio9laKeOsteU2jz4MY/f85ItPB7ovZU1bsE6Ij7BJHWGbdsh/DTAKno1HT+AStemu8UQ=="
   }
 }
 resource "azurerm_resource_group" "rg1"{
