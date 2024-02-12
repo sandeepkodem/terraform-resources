@@ -9,72 +9,24 @@ terraform {
 
 provider "azurerm" {
    features {}
-   subscription_id = var.subscription_id
-   tenant_id = var.tenant_id
-   client_secret = var.client_secret
-   client_id = var.client_id
+   subscription_id = $(var.subscription_id)
+   tenant_id = $(var.tenant_id)
+   client_secret = $(var.client_secret)
+   client_id = $(var.client_id)
 }
   terraform {
   backend "azurerm" {
-    storage_account_name = "terraformstatebacku"
+    storage_account_name = "storage456781"
     container_name       = "terrastatecontianer"
     key                  = "prod.terraform.tfstate"
 
     # rather than defining this inline, the SAS Token can also be sourced
     # from an Environment Variable - more information is available below.
-    access_key = "BiB1vSnZG+Oet0Iwo8RVvDJJ6KbVjq1spiHS9/NUAgAmRKPlCHfJR4iuuLZN6/1GFceXGxJObNaL+AStqDnxOw=="
+    access_key = "9GB00W88YiByjwOdOMio9laKeOsteU2jz4MY/f85ItPB7ovZU1bsE6Ij7BJHWGbdsh/DTAKno1HT+AStemu8UQ=="
   }
 }
 resource "azurerm_resource_group" "rg1"{
   name= "newreosurce45687"
   location= "Central India"
 
-}
-module "azure_app_insights" {
-  source= "./modules/app-insights"
-  resource_group_name= var.resource_group_name
-  application_insights_name= var.application_insights_name
-}
-
-module "azure_app_service" {
-  source = "./modules/azure-web-app"
-  resource_group_name= var.resource_group_name
-  #application-insights-name = var.application_insights_name
-  web-app-name= var.web-app-name
-  app-service-plan-name= var.app-service-plan-name
-  app_service_name= var.app_service_name
-  application_insights_name = var.application_insights_name
-
-  depends_on = [ module.azure_app_insights ]
-}
-
-
-module "azure_key_vault" {
-  source= "./modules/key_vault"
-  resource_group_name= var.resource_group_name
-  key_vault_name= var.key_vault_name
-
-}
-
-module "azure_storage_account" {
-  source= "./modules/storage_account"
-  resource_group_name= var.resource_group_name
-  storage_account_name= var.storage_account_name
-
-  
-}
-
-module "azure_sql_data" {
-  source= "./modules/sql_data"
-  resource_group_name= var.resource_group_name
-  sql_database_name = var.sql_database_name
-  mssql_server_name= var.mssql_server_name
-  mssql_server_administrator_login= var.mssql_server_administrator_login
-  administrator_login_password= var.administrator_login_password
-}
-
-module "azure_data_bricks" {
-  source= "./modules/azure_data_bricks"
-  resource_group_name= var.resource_group_name
-  azurerm_databricks_workspace_name=  var.azurerm_databricks_workspace_name
 }
