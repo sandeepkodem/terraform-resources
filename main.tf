@@ -26,7 +26,7 @@ provider "azurerm" {
   }
 }
 resource "azurerm_resource_group" "rg1"{
-  name= $(var.resourcegroupname)
+  name= $(var.resource_group_name)
   location= "Central India"
 
 }
